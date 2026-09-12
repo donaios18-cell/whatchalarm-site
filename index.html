@@ -7,7 +7,7 @@
 <meta name="description" content="A smart alarm that runs entirely on your Apple Watch. It waits for a lighter moment inside your wake window and taps you awake — or wakes you exactly on time.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Spectral:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@500;600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,33 +23,149 @@
   </div>
 
   <div class="hero">
-    <p class="eyebrow">For Apple Watch</p>
-    <h1>Wake up at a lighter moment, not mid-dream.</h1>
-    <p class="lede">
-      Give WhatchAlarm the latest time you can afford to get up and a window before it. Inside that
-      window it watches your wrist for the moment you are already stirring, and taps you awake then.
-      If it never finds one, it wakes you exactly at your deadline.
-    </p>
-    <div class="cta">
-      <a class="button" href="#price">14 days free, then $2.99 once</a>
-      <span class="note">No subscription · No account · No servers</span>
+    <div class="hero-copy">
+      <p class="eyebrow">For Apple Watch</p>
+      <h1>Wake up <em>on the way up</em>, not mid-dream.</h1>
+      <p class="lede">
+        Give WhatchAlarm the latest time you can afford to get up, and a window before it. Inside that
+        window the watch waits for the moment you are already surfacing — and taps you awake then.
+        If it never finds one, it wakes you exactly at your deadline.
+      </p>
+      <div class="cta">
+        <a class="button" href="#price">14 days free, then $2.99 once</a>
+        <span class="note">No subscription · No account · No servers</span>
+      </div>
     </div>
+
+    <figure class="watch">
+      <div class="watch-body">
+        <div class="watch-screen">
+          <div class="w-moon">🌙</div>
+          <div class="w-title">Alarm set</div>
+          <div class="w-sub">Wake by 7:30 AM<br>20 min window</div>
+          <div class="w-btn ghost">Manage</div>
+        </div>
+      </div>
+      <figcaption>Armed for the night</figcaption>
+    </figure>
   </div>
+
+  <section id="night">
+    <h2>What it's actually doing while you sleep</h2>
+    <p class="section-lede">
+      You don't sleep at one depth — you rise and fall through cycles all night. A fixed alarm fires
+      wherever it lands, which is why 7:30 can feel like being dragged up from the bottom. WhatchAlarm
+      only looks inside the window you allow, and picks the nearest moment you were already coming up.
+    </p>
+
+    <div class="chart">
+      <svg viewBox="0 0 760 300" role="img" aria-label="A night of sleep cycles. The wake window sits in the last thirty minutes before the 7:30 deadline, and WhatchAlarm wakes the sleeper at 7:14, on a rise toward light sleep, rather than at 7:30 when they have dropped deeper again.">
+        <!-- depth axis labels -->
+        <text x="10" y="66" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11">Light</text>
+        <text x="10" y="212" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11">Deep</text>
+
+        <!-- horizontal guides -->
+        <line x1="56" y1="60" x2="700" y2="60" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="56" y1="137" x2="700" y2="137" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="56" y1="215" x2="700" y2="215" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+        <!-- the wake window -->
+        <rect x="663" y="55" width="37" height="165" fill="rgba(255,184,107,0.16)" stroke="rgba(255,184,107,0.45)" stroke-width="1" rx="3"/>
+
+        <!-- deadline -->
+        <line x1="700" y1="50" x2="700" y2="228" stroke="#8E9AB4" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+        <!-- sleep curve -->
+        <path
+          d="M56,80 C84,80 84,205 112,205 C140,205 140,112 168,112 C196,112 196,202 224,202
+             C252,202 252,116 280,116 C308,116 308,190 336,190 C364,190 364,104 392,104
+             C420,104 420,180 448,180 C476,180 476,98 504,98 C532,98 532,162 560,162
+             C587,162 587,94 614,94 C638.5,94 638.5,150 663,150 C671.5,150 671.5,88 680,88
+             C690,88 690,142 700,142"
+          fill="none" stroke="#6FA8FF" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- the moment it wakes you -->
+        <circle cx="680" cy="88" r="6.5" fill="#FFB86B"/>
+        <circle cx="680" cy="88" r="12" fill="none" stroke="rgba(255,184,107,0.45)" stroke-width="1.5"/>
+        <text x="680" y="42" fill="#FFB86B" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">7:14</text>
+        <line x1="680" y1="50" x2="680" y2="70" stroke="rgba(255,184,107,0.5)" stroke-width="1"/>
+
+        <!-- where a plain alarm lands -->
+        <circle cx="700" cy="142" r="5" fill="none" stroke="#8E9AB4" stroke-width="1.8"/>
+
+        <!-- time axis -->
+        <line x1="56" y1="228" x2="700" y2="228" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <text x="56" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">23:00</text>
+        <text x="208" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">1:00</text>
+        <text x="359" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">3:00</text>
+        <text x="511" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">5:00</text>
+        <text x="700" y="250" fill="#EDF1F8" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">7:30</text>
+        <text x="700" y="268" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="middle">deadline</text>
+      </svg>
+
+      <div class="legend">
+        <span><i class="dot"></i> Woken at 7:14, on the way up</span>
+        <span><i class="band"></i> Your 20-minute window</span>
+        <span><i class="dash"></i> Deadline — where a plain alarm fires</span>
+      </div>
+    </div>
+  </section>
 
   <section id="how">
     <h2>How it works</h2>
-    <div class="steps">
+    <p class="section-lede">Three screens, once a night. Everything happens on the watch.</p>
+
+    <div class="screens">
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-title">WhatchAlarm</div>
+            <div class="w-time">7:30 AM</div>
+            <div class="w-row"><span>Window</span><span class="w-pill">20 min</span></div>
+            <div class="w-row"><span>Sound</span><span class="w-toggle"></span></div>
+            <div class="w-btn">Start</div>
+          </div>
+        </div>
+        <figcaption>1 — Set it before bed</figcaption>
+      </figure>
+
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-moon">🌙</div>
+            <div class="w-title">Alarm set</div>
+            <div class="w-sub">Wake by 7:30 AM<br>20 min window</div>
+            <div class="w-btn ghost">Manage</div>
+          </div>
+        </div>
+        <figcaption>2 — Sleep, phone anywhere</figcaption>
+      </figure>
+
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-title">Woke you up</div>
+            <div class="w-time accent">7:14 AM</div>
+            <div class="w-sub">You were in light sleep</div>
+            <div class="w-btn stop">Stop</div>
+          </div>
+        </div>
+        <figcaption>3 — Tapped awake, gently</figcaption>
+      </figure>
+    </div>
+
+    <div class="steps" style="padding-top: 34px;">
       <div class="step">
         <div class="n">1</div>
         <div>
-          <h3>Set it on the watch, before bed</h3>
+          <h3>Set it on the watch</h3>
           <p>Pick your latest wake-up time and a window — 10 to 30 minutes — and tap Start.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">2</div>
         <div>
-          <h3>Sleep. Your phone can be anywhere</h3>
+          <h3>Your phone can be anywhere</h3>
           <p>The alarm lives on the watch. The iPhone can be in another room, face down, or switched off entirely.</p>
         </div>
       </div>
@@ -57,7 +173,7 @@
         <div class="n">3</div>
         <div>
           <h3>It watches for the shallow end</h3>
-          <p>When the window opens, the watch reads wrist movement and heart rate. Turning over, a rising pulse — the signals that you are already close to the surface.</p>
+          <p>When the window opens, the watch reads wrist movement and heart rate — turning over, a rising pulse, the signs you are already close to the surface.</p>
         </div>
       </div>
       <div class="step">
@@ -75,28 +191,31 @@
     <div class="points">
       <div class="point">
         <h3>It runs on the watch, not the phone</h3>
-        <p>Most smart alarms lean on the iPhone doing work in the background — which iOS grants sparingly, and which stops entirely if you keep Background App Refresh switched off. WhatchAlarm asks the watch for its own wake-up window, so nothing depends on what your phone is allowed to do overnight.</p>
+        <p>Most smart alarms lean on the iPhone working in the background — which iOS grants sparingly, and which stops entirely if you keep Background App Refresh off. WhatchAlarm books its own wake-up window with the watch instead.</p>
       </div>
       <div class="point">
         <h3>The deadline is never negotiable</h3>
-        <p>The wake-up at your latest time is scheduled the moment you tap Start. Even if the app is shut down, the battery gets low, or the detection finds nothing, that alarm is already in the queue.</p>
+        <p>The wake-up at your latest time is scheduled the moment you tap Start. Even if the app is shut down or the detection finds nothing, that alarm is already in the queue.</p>
       </div>
       <div class="point">
         <h3>Nothing leaves your wrist</h3>
-        <p>No account, no sign-in, no servers, no analytics. Your heart rate is read on the watch, used on the watch, and never transmitted anywhere — not to the developer, not to anyone.</p>
+        <p>No account, no sign-in, no servers, no analytics. Your heart rate is read on the watch, used on the watch, and never transmitted anywhere.</p>
       </div>
       <div class="point">
         <h3>Honest about what it is</h3>
-        <p>Sleep-phase detection from a wrist sensor is a good heuristic, not a laboratory measurement. WhatchAlarm treats it that way: it only ever moves your alarm <em>earlier</em>, inside a window you chose.</p>
+        <p>Sleep-phase detection from a wrist sensor is a good heuristic, not a laboratory measurement. So it only ever moves your alarm <em>earlier</em>, inside a window you chose.</p>
       </div>
     </div>
   </section>
 
   <section id="price">
     <h2>Price</h2>
-    <p class="price-line">$2.99 <span>once, and it's yours</span></p>
-    <p class="lede">Free for the first 14 days — the whole app, nothing held back. After that, a single purchase unlocks it permanently. Not a subscription: nothing renews, nothing charges again.</p>
-    <div class="cta">
+    <div class="price-card">
+      <p class="price-line">$2.99 <span>once, and it's yours</span></p>
+      <p class="lede" style="margin:0;">
+        Free for the first 14 days — the whole app, nothing held back. After that, a single purchase
+        unlocks it permanently. Not a subscription: nothing renews, nothing charges again.
+      </p>
       <a class="button" href="https://apps.apple.com/app/id6804431307">Get it on the App Store</a>
     </div>
   </section>
@@ -109,8 +228,10 @@
       <li>Permission to read heart rate, granted on the watch</li>
       <li>WhatchAlarm allowed through Sleep Focus, so the alarm isn't muted</li>
     </ul>
-    <div class="callout" style="margin-top: 22px;">
-      <strong>Keep a backup alarm for anything that matters.</strong> WhatchAlarm depends on your watch being worn, charged, and undisturbed by system settings. For a flight, an exam, or medication, don't make it your only alarm.
+    <div class="callout">
+      <strong>Keep a backup alarm for anything that matters.</strong> WhatchAlarm depends on your watch
+      being worn, charged, and undisturbed by system settings. For a flight, an exam, or medication,
+      don't make it your only alarm.
     </div>
   </section>
 
