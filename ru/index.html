@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhatchAlarm — умный будильник для Apple Watch</title>
+<meta name="description" content="Умный будильник, который целиком работает на Apple Watch. Он ждёт момента более лёгкого сна внутри вашего окна пробуждения и будит вас лёгкими касаниями — или ровно в заданное время.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@500;600&display=swap">
+<link rel="stylesheet" href="../style.css?v=3">
+<link rel="alternate" hreflang="en" href="https://donaios18-cell.github.io/whatchalarm-site/">
+<link rel="alternate" hreflang="es" href="https://donaios18-cell.github.io/whatchalarm-site/es/">
+<link rel="alternate" hreflang="de" href="https://donaios18-cell.github.io/whatchalarm-site/de/">
+<link rel="alternate" hreflang="fr" href="https://donaios18-cell.github.io/whatchalarm-site/fr/">
+<link rel="alternate" hreflang="ru" href="https://donaios18-cell.github.io/whatchalarm-site/ru/">
+<link rel="alternate" hreflang="pt" href="https://donaios18-cell.github.io/whatchalarm-site/pt/">
+<link rel="alternate" hreflang="x-default" href="https://donaios18-cell.github.io/whatchalarm-site/">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <a class="wordmark" href="index.html">WhatchAlarm</a>
+    <nav>
+      <a href="#how">Как это работает</a>
+      <a href="#price">Цена</a>
+      <a href="privacy.html">Конфиденциальность</a>
+    </nav>
+    <nav class="langs" aria-label="Язык">
+      <a href="../index.html" lang="en">EN</a>
+      <a href="../es/index.html" lang="es">ES</a>
+      <a href="../de/index.html" lang="de">DE</a>
+      <a href="../fr/index.html" lang="fr">FR</a>
+      <a href="index.html" lang="ru" aria-current="page">RU</a>
+      <a href="../pt/index.html" lang="pt">PT</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Для Apple Watch</p>
+      <h1>Просыпайтесь <em>на подъёме</em>, а не посреди сна.</h1>
+      <p class="lede">
+        Укажите WhatchAlarm самое позднее время, когда вам нужно встать, и окно перед ним. Внутри этого
+        окна часы ждут момента, когда вы и так уже просыпаетесь, — и тогда будят вас лёгкими касаниями.
+        Если такой момент не найдётся, они разбудят вас ровно в крайнее время.
+      </p>
+      <div class="cta">
+        <a class="button" href="#price">14 дней бесплатно, затем $2.99</a>
+        <span class="note">Без подписки · Без аккаунта · Без серверов</span>
+      </div>
+    </div>
+
+    <figure class="watch">
+      <div class="watch-body">
+        <div class="watch-screen">
+          <div class="w-moon">🌙</div>
+          <div class="w-title">Будильник заведён</div>
+          <div class="w-sub">Разбудить до 7:30<br>окно 20 мин</div>
+          <div class="w-btn ghost">Управление</div>
+        </div>
+      </div>
+      <figcaption>Заведён на ночь</figcaption>
+    </figure>
+  </div>
+
+  <section id="night">
+    <h2>Что он на самом деле делает, пока вы спите</h2>
+    <p class="section-lede">
+      Мы спим не на одной глубине: всю ночь сон циклами то становится глубже, то мельче. Обычный будильник
+      звонит там, где придётся, — поэтому в 7:30 порой кажется, будто вас вытаскивают со дна. WhatchAlarm
+      смотрит только внутри разрешённого вами окна и выбирает ближайший момент, когда вы и так уже поднимались к поверхности.
+    </p>
+
+    <div class="chart">
+      <svg viewBox="0 0 760 300" role="img" aria-label="Ночь, состоящая из циклов сна. Окно пробуждения занимает последние двадцать минут перед крайним временем 7:30, и WhatchAlarm будит спящего в 7:14, на подъёме к лёгкому сну, а не в 7:30, когда сон снова стал глубже.">
+        <!-- depth axis labels -->
+        <text x="10" y="66" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11">Лёгкий</text>
+        <text x="10" y="212" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="9">Глубокий</text>
+
+        <!-- horizontal guides -->
+        <line x1="56" y1="60" x2="700" y2="60" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="56" y1="137" x2="700" y2="137" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="56" y1="215" x2="700" y2="215" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+        <!-- the wake window -->
+        <rect x="675" y="55" width="25" height="165" fill="rgba(255,184,107,0.16)" stroke="rgba(255,184,107,0.45)" stroke-width="1" rx="3"/>
+
+        <!-- deadline -->
+        <line x1="700" y1="50" x2="700" y2="228" stroke="#8E9AB4" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+        <!-- sleep curve -->
+        <path
+          d="M56,80 C84,80 84,205 112,205 C140,205 140,112 168,112 C196,112 196,202 224,202
+             C252,202 252,116 280,116 C308,116 308,190 336,190 C364,190 364,104 392,104
+             C420,104 420,180 448,180 C476,180 476,98 504,98 C532,98 532,162 560,162
+             C587,162 587,94 614,94 C638.5,94 638.5,150 663,150 C671.5,150 671.5,88 680,88
+             C690,88 690,142 700,142"
+          fill="none" stroke="#6FA8FF" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- the moment it wakes you -->
+        <circle cx="680" cy="88" r="6.5" fill="#FFB86B"/>
+        <circle cx="680" cy="88" r="12" fill="none" stroke="rgba(255,184,107,0.45)" stroke-width="1.5"/>
+        <text x="680" y="42" fill="#FFB86B" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">7:14</text>
+        <line x1="680" y1="50" x2="680" y2="70" stroke="rgba(255,184,107,0.5)" stroke-width="1"/>
+
+        <!-- where a plain alarm lands -->
+        <circle cx="700" cy="142" r="5" fill="none" stroke="#8E9AB4" stroke-width="1.8"/>
+
+        <!-- time axis -->
+        <line x1="56" y1="228" x2="700" y2="228" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <text x="56" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">23:00</text>
+        <text x="208" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">1:00</text>
+        <text x="359" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">3:00</text>
+        <text x="511" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">5:00</text>
+        <text x="700" y="250" fill="#EDF1F8" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">7:30</text>
+        <text x="700" y="268" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="middle">крайний срок</text>
+      </svg>
+
+      <div class="legend">
+        <span><i class="dot"></i> Разбудил в 7:14, на подъёме</span>
+        <span><i class="band"></i> Ваше окно — 20 минут</span>
+        <span><i class="dash"></i> Крайнее время — здесь звонит обычный будильник</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Как это работает</h2>
+    <p class="section-lede">Заведите его на одно утро — или один раз на всю неделю. Всё происходит на часах.</p>
+
+    <div class="screens">
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-title">WhatchAlarm</div>
+            <div class="w-time">7:30</div>
+            <div class="w-row"><span>Окно</span><span class="w-pill">20 мин</span></div>
+            <div class="w-row"><span>Звук</span><span class="w-toggle"></span></div>
+            <div class="w-btn">Старт</div>
+          </div>
+        </div>
+        <figcaption>1 — Заведите или задайте расписание</figcaption>
+      </figure>
+
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-moon">🌙</div>
+            <div class="w-title">Будильник заведён</div>
+            <div class="w-sub">Разбудить до 7:30<br>окно 20 мин</div>
+            <div class="w-btn ghost">Управление</div>
+          </div>
+        </div>
+        <figcaption>2 — Спите, телефон где угодно</figcaption>
+      </figure>
+
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-title">Будильник сработал</div>
+            <div class="w-time accent">7:14</div>
+            <div class="w-sub">У вас был лёгкий сон</div>
+            <div class="w-btn stop">Выключить</div>
+          </div>
+        </div>
+        <figcaption>3 — Мягко разбудил касаниями</figcaption>
+      </figure>
+    </div>
+
+    <div class="steps" style="padding-top: 34px;">
+      <div class="step">
+        <div class="n">1</div>
+        <div>
+          <h3>Заведите на часах</h3>
+          <p>Выберите самое позднее время подъёма и окно — от 10 до 30 минут — и нажмите «Старт». Или составьте расписание на неделю, со своим временем для каждого дня, и пусть оно работает.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div>
+          <h3>Телефон может быть где угодно</h3>
+          <p>Будильник живёт на часах. iPhone может лежать в другой комнате, экраном вниз или быть совсем выключенным.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div>
+          <h3>Он ждёт, когда сон станет мельче</h3>
+          <p>Когда окно открывается, часы считывают движение руки и пульс: вы ворочаетесь, пульс учащается — это признаки того, что вы уже близки к пробуждению.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div>
+          <h3>Сначала мягкие касания</h3>
+          <p>Он начинает с лёгких касаний запястья, а не с резкого сигнала, и усиливает их, только если вы продолжаете спать.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="different">
+    <h2>Чем он отличается</h2>
+    <div class="points">
+      <div class="point">
+        <h3>Работает на часах, а не на телефоне</h3>
+        <p>Большинство умных будильников полагаются на фоновую работу iPhone — а iOS разрешает её скупо и полностью прекращает, если у вас выключено «Обновление контента». WhatchAlarm вместо этого сам бронирует на часах своё окно пробуждения.</p>
+      </div>
+      <div class="point">
+        <h3>Крайнее время — без компромиссов</h3>
+        <p>Будильник на самое позднее время ставится в момент нажатия «Старт». Даже если приложение закроется или часы не найдут подходящего момента, этот будильник уже стоит в очереди.</p>
+      </div>
+      <div class="point">
+        <h3>Ничто не покидает запястье</h3>
+        <p>Ни аккаунта, ни входа, ни серверов, ни аналитики. Пульс считывается на часах, используется на часах и никуда не передаётся.</p>
+      </div>
+      <div class="point">
+        <h3>Честно о том, что это</h3>
+        <p>Определение фаз сна по датчику на запястье — хорошая оценка, а не лабораторное измерение. Поэтому будильник может сдвинуться только <em>раньше</em> и только внутри выбранного вами окна.</p>
+      </div>
+      <div class="point">
+        <h3>Сразу на всю неделю</h3>
+        <p>По будням в 7:30, в субботу в 9:00 — у каждого дня своё время. В эти дни будильник звонит сам, а если умной части нужно ваше касание, накануне вечером придёт напоминание.</p>
+      </div>
+      <div class="point">
+        <h3>На циферблате</h3>
+        <p>Расширение показывает следующий будильник — достаточно взглянуть на часы. Коснитесь его, чтобы открыть WhatchAlarm, — и заодно включите умное пробуждение на завтра.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <h2>Цена</h2>
+    <div class="price-card">
+      <p class="price-line">$2.99 <span>один раз — и оно ваше</span></p>
+      <p class="lede" style="margin:0;">
+        Первые 14 дней бесплатно — всё приложение, без ограничений. Потом одна покупка открывает его
+        навсегда. Это не подписка: ничего не продлевается и повторно не списывается. $2.99 — цена в США;
+        в других странах цену в местной валюте устанавливает Apple.
+      </p>
+      <a class="button" href="https://apps.apple.com/app/id6804431307">Загрузить в App Store</a>
+    </div>
+  </section>
+
+  <section id="needs">
+    <h2>Что нужно</h2>
+    <ul class="specs">
+      <li>Apple Watch с watchOS 10 или новее</li>
+      <li>Сопряжённый iPhone с iOS 17 или новее</li>
+      <li>Разрешение на часах на чтение пульса и движения</li>
+      <li>WhatchAlarm в списке разрешённых в режиме «Сон», чтобы будильник не заглушался</li>
+    </ul>
+    <div class="callout">
+      <strong>Для всего по-настоящему важного держите запасной будильник.</strong> WhatchAlarm зависит от того,
+      что часы надеты, заряжены и не заглушены настройками системы. Перед самолётом, экзаменом или приёмом
+      лекарств не делайте его единственным будильником.
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>© 2026 Natalia Gurevich</span>
+    <nav>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="terms.html">Условия использования</a>
+      <a href="mailto:dona.ios18@gmail.com">Связаться</a>
+      <a href="https://donaios18-cell.github.io/ng-hive-site/" target="_blank" rel="noopener">Сделано в NG Hive &#8599;</a>
+    </nav>
+  </footer>
+
+</div>
+<script src="../lang.js"></script>
+</body>
+</html>

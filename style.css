@@ -30,6 +30,8 @@ body {
   margin: 0;
   padding: 0 20px 88px;
   -webkit-font-smoothing: antialiased;
+  /* the dawn glow behind the hero is wider than the screen */
+  overflow-x: clip;
 }
 
 .wrap { max-width: 760px; margin: 0 auto; }
@@ -134,6 +136,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   border-radius: 11px;
   padding: 12px 22px;
   box-shadow: 0 8px 26px -12px var(--accent);
+  text-align: center;
 }
 
 .button:hover { filter: brightness(1.09); }
@@ -442,3 +445,15 @@ footer.site nav { display: flex; gap: 20px; flex-wrap: wrap; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ---------- language switcher ---------- */
+
+.masthead .wordmark { margin-right: auto; }
+.masthead nav.langs { gap: 11px; font-size: 12px; padding-left: 16px; border-left: 1px solid var(--rule-strong); }
+.masthead nav.langs a[aria-current] { color: var(--ink); }
+
+@media (max-width: 560px) {
+  .masthead nav.langs { border-left: 0; padding-left: 0; }
+}
+
+.translation-note { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 4px 0 0; }

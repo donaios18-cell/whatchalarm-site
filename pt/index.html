@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhatchAlarm — Despertar inteligente para Apple Watch</title>
+<meta name="description" content="Um alarme inteligente que funciona inteiramente no seu Apple Watch. Ele espera um momento de sono mais leve dentro da sua janela e acorda você com toques — ou acorda você exatamente no horário.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@500;600&display=swap">
+<link rel="stylesheet" href="../style.css?v=3">
+<link rel="alternate" hreflang="en" href="https://donaios18-cell.github.io/whatchalarm-site/">
+<link rel="alternate" hreflang="es" href="https://donaios18-cell.github.io/whatchalarm-site/es/">
+<link rel="alternate" hreflang="de" href="https://donaios18-cell.github.io/whatchalarm-site/de/">
+<link rel="alternate" hreflang="fr" href="https://donaios18-cell.github.io/whatchalarm-site/fr/">
+<link rel="alternate" hreflang="ru" href="https://donaios18-cell.github.io/whatchalarm-site/ru/">
+<link rel="alternate" hreflang="pt" href="https://donaios18-cell.github.io/whatchalarm-site/pt/">
+<link rel="alternate" hreflang="x-default" href="https://donaios18-cell.github.io/whatchalarm-site/">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <a class="wordmark" href="index.html">WhatchAlarm</a>
+    <nav>
+      <a href="#how">Como funciona</a>
+      <a href="#price">Preço</a>
+      <a href="privacy.html">Privacidade</a>
+    </nav>
+    <nav class="langs" aria-label="Idioma">
+      <a href="../index.html" lang="en">EN</a>
+      <a href="../es/index.html" lang="es">ES</a>
+      <a href="../de/index.html" lang="de">DE</a>
+      <a href="../fr/index.html" lang="fr">FR</a>
+      <a href="../ru/index.html" lang="ru">RU</a>
+      <a href="index.html" lang="pt" aria-current="page">PT</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Para Apple Watch</p>
+      <h1>Acorde <em>quando o sono fica leve</em>, não no meio de um sonho.</h1>
+      <p class="lede">
+        Diga ao WhatchAlarm o horário mais tarde em que você pode levantar, mais uma janela antes dele. Dentro
+        dessa janela, o relógio espera o momento em que você já está despertando — e acorda você com toques nessa hora.
+        Se não encontrar esse momento, acorda você exatamente no horário limite.
+      </p>
+      <div class="cta">
+        <a class="button" href="#price">14 dias grátis, depois $2.99 uma vez</a>
+        <span class="note">Sem assinatura · Sem conta · Sem servidores</span>
+      </div>
+    </div>
+
+    <figure class="watch">
+      <div class="watch-body">
+        <div class="watch-screen">
+          <div class="w-moon">🌙</div>
+          <div class="w-title">Alarme definido</div>
+          <div class="w-sub">Acordar até 7:30<br>janela de 20 min</div>
+          <div class="w-btn ghost">Gerenciar</div>
+        </div>
+      </div>
+      <figcaption>Pronto para a noite</figcaption>
+    </figure>
+  </div>
+
+  <section id="night">
+    <h2>O que ele realmente faz enquanto você dorme</h2>
+    <p class="section-lede">
+      Ninguém dorme numa profundidade só — a noite toda você sobe e desce por ciclos. Um alarme fixo toca
+      onde calhar — é por isso que acordar às 7:30 às vezes parece ser arrancado do fundo do sono. O WhatchAlarm
+      olha só dentro da janela que você permite e escolhe o momento mais próximo em que você já estava despertando.
+    </p>
+
+    <div class="chart">
+      <svg viewBox="0 0 760 300" role="img" aria-label="Uma noite de ciclos de sono. A janela fica nos últimos vinte minutos antes do horário limite de 7:30, e o WhatchAlarm acorda a pessoa às 7:14, numa subida em direção ao sono leve, e não às 7:30, quando ela já voltou a um sono mais profundo.">
+        <!-- depth axis labels -->
+        <text x="10" y="66" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11">Leve</text>
+        <text x="10" y="212" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="9">Profundo</text>
+
+        <!-- horizontal guides -->
+        <line x1="56" y1="60" x2="700" y2="60" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="56" y1="137" x2="700" y2="137" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="56" y1="215" x2="700" y2="215" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+        <!-- the wake window -->
+        <rect x="675" y="55" width="25" height="165" fill="rgba(255,184,107,0.16)" stroke="rgba(255,184,107,0.45)" stroke-width="1" rx="3"/>
+
+        <!-- deadline -->
+        <line x1="700" y1="50" x2="700" y2="228" stroke="#8E9AB4" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+        <!-- sleep curve -->
+        <path
+          d="M56,80 C84,80 84,205 112,205 C140,205 140,112 168,112 C196,112 196,202 224,202
+             C252,202 252,116 280,116 C308,116 308,190 336,190 C364,190 364,104 392,104
+             C420,104 420,180 448,180 C476,180 476,98 504,98 C532,98 532,162 560,162
+             C587,162 587,94 614,94 C638.5,94 638.5,150 663,150 C671.5,150 671.5,88 680,88
+             C690,88 690,142 700,142"
+          fill="none" stroke="#6FA8FF" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- the moment it wakes you -->
+        <circle cx="680" cy="88" r="6.5" fill="#FFB86B"/>
+        <circle cx="680" cy="88" r="12" fill="none" stroke="rgba(255,184,107,0.45)" stroke-width="1.5"/>
+        <text x="680" y="42" fill="#FFB86B" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">7:14</text>
+        <line x1="680" y1="50" x2="680" y2="70" stroke="rgba(255,184,107,0.5)" stroke-width="1"/>
+
+        <!-- where a plain alarm lands -->
+        <circle cx="700" cy="142" r="5" fill="none" stroke="#8E9AB4" stroke-width="1.8"/>
+
+        <!-- time axis -->
+        <line x1="56" y1="228" x2="700" y2="228" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+        <text x="56" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">23:00</text>
+        <text x="208" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">1:00</text>
+        <text x="359" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">3:00</text>
+        <text x="511" y="250" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">5:00</text>
+        <text x="700" y="250" fill="#EDF1F8" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">7:30</text>
+        <text x="700" y="268" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="middle">hora limite</text>
+      </svg>
+
+      <div class="legend">
+        <span><i class="dot"></i> Acordou às 7:14, já despertando</span>
+        <span><i class="band"></i> Sua janela de 20 minutos</span>
+        <span><i class="dash"></i> Horário limite — onde um alarme comum toca</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Como funciona</h2>
+    <p class="section-lede">Defina para uma manhã, ou de uma vez para a semana inteira. Tudo acontece no relógio.</p>
+
+    <div class="screens">
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-title">WhatchAlarm</div>
+            <div class="w-time">7:30</div>
+            <div class="w-row"><span>Janela</span><span class="w-pill">20 min</span></div>
+            <div class="w-row"><span>Som</span><span class="w-toggle"></span></div>
+            <div class="w-btn">Iniciar</div>
+          </div>
+        </div>
+        <figcaption>1 — Defina ou agende</figcaption>
+      </figure>
+
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-moon">🌙</div>
+            <div class="w-title">Alarme definido</div>
+            <div class="w-sub">Acordar até 7:30<br>janela de 20 min</div>
+            <div class="w-btn ghost">Gerenciar</div>
+          </div>
+        </div>
+        <figcaption>2 — Durma, com o celular em qualquer lugar</figcaption>
+      </figure>
+
+      <figure class="watch">
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="w-title">Alarme tocou</div>
+            <div class="w-time accent">7:14</div>
+            <div class="w-sub">Você estava em sono leve</div>
+            <div class="w-btn stop">Parar</div>
+          </div>
+        </div>
+        <figcaption>3 — Toques suaves para acordar</figcaption>
+      </figure>
+    </div>
+
+    <div class="steps" style="padding-top: 34px;">
+      <div class="step">
+        <div class="n">1</div>
+        <div>
+          <h3>Defina no relógio</h3>
+          <p>Escolha o horário limite para acordar e uma janela — de 10 a 30 minutos — e toque em Iniciar. Ou crie uma agenda semanal, com um horário para cada dia, e deixe-a ativa.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div>
+          <h3>O celular pode estar em qualquer lugar</h3>
+          <p>O alarme fica no relógio. O iPhone pode estar em outro cômodo, virado para baixo ou totalmente desligado.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div>
+          <h3>Ele espera o sono ficar leve</h3>
+          <p>Quando a janela abre, o relógio lê o movimento do pulso e os batimentos — você se virando na cama, o pulso acelerando, sinais de que já está perto de acordar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div>
+          <h3>Primeiro, toques suaves</h3>
+          <p>Começa com toques leves no pulso, não com um susto, e só insiste se você continuar dormindo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="different">
+    <h2>O que o torna diferente</h2>
+    <div class="points">
+      <div class="point">
+        <h3>Funciona no relógio, não no celular</h3>
+        <p>A maioria dos alarmes inteligentes depende do iPhone trabalhando em segundo plano — algo que o iOS concede com moderação e que para de vez se a Atualização em 2º Plano estiver desativada. O WhatchAlarm reserva a própria janela de despertar diretamente no relógio.</p>
+      </div>
+      <div class="point">
+        <h3>O horário limite é inegociável</h3>
+        <p>O alarme do horário limite é agendado assim que você toca em Iniciar. Mesmo que o app seja fechado ou a detecção não encontre nada, esse alarme já está na fila.</p>
+      </div>
+      <div class="point">
+        <h3>Nada sai do seu pulso</h3>
+        <p>Sem conta, sem login, sem servidores, sem análises. Seus batimentos são lidos no relógio, usados no relógio e nunca transmitidos para lugar nenhum.</p>
+      </div>
+      <div class="point">
+        <h3>Honesto sobre o que é</h3>
+        <p>Detectar fases do sono com um sensor de pulso é uma boa estimativa, não uma medição de laboratório. Por isso ele só <em>adianta</em> o alarme, dentro de uma janela que você escolheu.</p>
+      </div>
+      <div class="point">
+        <h3>Uma semana de cada vez</h3>
+        <p>Dias úteis às 7:30, sábado às 9:00 — cada dia com seu horário. O alarme toca nesses dias sozinho, e um lembrete na véspera cobre as noites em que a parte inteligente precisa de um toque.</p>
+      </div>
+      <div class="point">
+        <h3>No seu mostrador</h3>
+        <p>Uma complicação mostra seu próximo alarme num relance. Toque nela para abrir o WhatchAlarm — e, já que está lá, ative o despertar inteligente para amanhã.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <h2>Preço</h2>
+    <div class="price-card">
+      <p class="price-line">$2.99 <span>uma vez, e é seu</span></p>
+      <p class="lede" style="margin:0;">
+        Grátis nos primeiros 14 dias — o app completo, sem restrições. Depois, uma única compra
+        desbloqueia para sempre. Não é assinatura: nada é renovado, nada é cobrado de novo.
+        $2.99 é o preço nos EUA; nos outros países, a Apple define o preço local.
+      </p>
+      <a class="button" href="https://apps.apple.com/app/id6804431307">Baixar na App Store</a>
+    </div>
+  </section>
+
+  <section id="needs">
+    <h2>O que você precisa</h2>
+    <ul class="specs">
+      <li>Apple Watch com watchOS 10 ou posterior</li>
+      <li>iPhone emparelhado com iOS 17 ou posterior</li>
+      <li>Permissão para ler os batimentos e o movimento, concedida no relógio</li>
+      <li>WhatchAlarm permitido no Foco Sono, para que o alarme não seja silenciado</li>
+    </ul>
+    <div class="callout">
+      <strong>Tenha um alarme de reserva para o que realmente importa.</strong> O WhatchAlarm depende de o relógio
+      estar no pulso, carregado e não ser silenciado pelos ajustes do sistema. Para um voo, uma prova ou um remédio,
+      não faça dele seu único alarme.
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>© 2026 Natalia Gurevich</span>
+    <nav>
+      <a href="privacy.html">Política de Privacidade</a>
+      <a href="terms.html">Termos de Uso</a>
+      <a href="mailto:dona.ios18@gmail.com">Contato</a>
+      <a href="https://donaios18-cell.github.io/ng-hive-site/" target="_blank" rel="noopener">Feito por NG Hive &#8599;</a>
+    </nav>
+  </footer>
+
+</div>
+<script src="../lang.js"></script>
+</body>
+</html>

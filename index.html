@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-home>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="alternate" hreflang="en" href="https://donaios18-cell.github.io/whatchalarm-site/">
+<link rel="alternate" hreflang="es" href="https://donaios18-cell.github.io/whatchalarm-site/es/">
+<link rel="alternate" hreflang="de" href="https://donaios18-cell.github.io/whatchalarm-site/de/">
+<link rel="alternate" hreflang="fr" href="https://donaios18-cell.github.io/whatchalarm-site/fr/">
+<link rel="alternate" hreflang="ru" href="https://donaios18-cell.github.io/whatchalarm-site/ru/">
+<link rel="alternate" hreflang="pt" href="https://donaios18-cell.github.io/whatchalarm-site/pt/">
+<link rel="alternate" hreflang="x-default" href="https://donaios18-cell.github.io/whatchalarm-site/">
 </head>
 <body>
 <div class="wrap">
@@ -19,6 +26,14 @@
       <a href="#how">How it works</a>
       <a href="#price">Price</a>
       <a href="privacy.html">Privacy</a>
+    </nav>
+    <nav class="langs" aria-label="Language">
+      <a href="index.html" lang="en" aria-current="page">EN</a>
+      <a href="es/" lang="es">ES</a>
+      <a href="de/" lang="de">DE</a>
+      <a href="fr/" lang="fr">FR</a>
+      <a href="ru/" lang="ru">RU</a>
+      <a href="pt/" lang="pt">PT</a>
     </nav>
   </div>
 
@@ -59,7 +74,7 @@
     </p>
 
     <div class="chart">
-      <svg viewBox="0 0 760 300" role="img" aria-label="A night of sleep cycles. The wake window sits in the last thirty minutes before the 7:30 deadline, and WhatchAlarm wakes the sleeper at 7:14, on a rise toward light sleep, rather than at 7:30 when they have dropped deeper again.">
+      <svg viewBox="0 0 760 300" role="img" aria-label="A night of sleep cycles. The wake window sits in the last twenty minutes before the 7:30 deadline, and WhatchAlarm wakes the sleeper at 7:14, on a rise toward light sleep, rather than at 7:30 when they have dropped deeper again.">
         <!-- depth axis labels -->
         <text x="10" y="66" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11">Light</text>
         <text x="10" y="212" fill="#8E9AB4" font-family="IBM Plex Mono, monospace" font-size="11">Deep</text>
@@ -70,7 +85,7 @@
         <line x1="56" y1="215" x2="700" y2="215" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
 
         <!-- the wake window -->
-        <rect x="663" y="55" width="37" height="165" fill="rgba(255,184,107,0.16)" stroke="rgba(255,184,107,0.45)" stroke-width="1" rx="3"/>
+        <rect x="675" y="55" width="25" height="165" fill="rgba(255,184,107,0.16)" stroke="rgba(255,184,107,0.45)" stroke-width="1" rx="3"/>
 
         <!-- deadline -->
         <line x1="700" y1="50" x2="700" y2="228" stroke="#8E9AB4" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -233,7 +248,7 @@
     <ul class="specs">
       <li>Apple Watch running watchOS 10 or later</li>
       <li>A paired iPhone running iOS 17 or later</li>
-      <li>Permission to read heart rate, granted on the watch</li>
+      <li>Permission to read heart rate and motion, granted on the watch</li>
       <li>WhatchAlarm allowed through Sleep Focus, so the alarm isn't muted</li>
     </ul>
     <div class="callout">
@@ -254,5 +269,6 @@
   </footer>
 
 </div>
+<script src="lang.js"></script>
 </body>
 </html>
